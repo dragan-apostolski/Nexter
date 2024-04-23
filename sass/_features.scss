@@ -1,0 +1,33 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // the following makes the grid responsive, so that each track is at least 25rem and at max 1fr
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
+}
+
+.feature {
+  display: grid;
+  // min-content because we want the 1st column to be as wide as its content, we could also say auto
+  grid-template-columns: min-content 1fr;
+  // grid-template-rows is implicitly defined because we want them to be the size of the content, so we don't define them
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  align-items: center;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    grid-column: 2/-1;
+  }
+}
