@@ -29,6 +29,12 @@ body {
   font-weight: 400;
 }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1;
+}
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
@@ -61,16 +67,112 @@ body {
   background-color: #c69963;
   grid-column: sidebar-start/sidebar-end;
   grid-row: 1/-1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-btn {
+  margin-top: 3rem;
+  border: none;
+  border-radius: 0;
+  display: block;
+  padding: 0;
+  background-color: white;
+  height: 2px;
+  width: 4.5rem;
+}
+.nav-btn::before, .nav-btn::after {
+  content: "";
+  background-color: white;
+  height: 2px;
+  width: 4.5rem;
+  display: block;
+}
+.nav-btn::before {
+  transform: translateY(-0.8rem);
+}
+.nav-btn::after {
+  transform: translateY(0.6rem);
 }
 
 .header {
   background-color: #101d2c;
   grid-column: full-start/col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.83), rgba(16, 29, 44, 0.93)), url("../img/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 8rem 8rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 8rem 1fr;
+  grid-template-columns: max-content;
+  grid-row-gap: 1.5rem;
+  justify-content: center;
+}
+.header__logo {
+  justify-self: center;
+  height: 3rem;
+}
+.header__btn {
+  align-self: start;
+  justify-self: start;
+}
+.header__seen-on-text {
+  color: #aaa;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+.header__seen-on-text::before {
+  content: "";
+  background-color: #aaa;
+  height: 3px;
+  width: 100%;
+}
+.header__seen-on-text::after {
+  content: "";
+  background-color: #aaa;
+  height: 3px;
+  width: 100%;
+}
+.header__seen-on-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 3rem;
+  justify-items: center;
+}
+.header__seen-on-logos img {
+  height: 25px;
+  filter: brightness(70%);
 }
 
 .realtors {
   background-color: #101d2c;
   grid-column: col-start 7/full-end;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.realtors__list {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  grid-column-gap: 20px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 5vh;
+  align-items: center;
+}
+.realtors__img {
+  width: 7rem;
+  display: block;
+  border-radius: 50%;
+}
+.realtors__sold {
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: -3px;
 }
 
 .features {
@@ -282,6 +384,39 @@ body {
 .footer {
   background-color: #101d2c;
   grid-column: full-start/full-end;
+  padding: 8rem;
+}
+
+.nav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+.nav__link:link, .nav__link:visited {
+  display: block;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+.nav__link:hover, .nav__link:active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.copyright {
+  margin-top: 6rem;
+  font-size: 1.4rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: #aaa;
+  text-align: center;
+  width: 70%;
 }
 
 .btn {
