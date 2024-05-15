@@ -7,13 +7,32 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: full-start / full-end;
+    grid-row: 3 / 4;
+  }
+
   &__list {
     display: grid;
-    grid-template-columns: min-content max-content;
+    grid-template-columns: repeat(3, max-content);
     grid-column-gap: 20px;
-    grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 5vh;
     align-items: center;
+
+    @media only screen and (max-width: $bp-largest) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: auto;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-rows: auto;
+      grid-template-columns: repeat(3, max-content);
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: auto;
+    }
   }
 
   &__img {
@@ -28,4 +47,10 @@
     margin-top: -3px;
   }
 
+}
+
+.realtor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

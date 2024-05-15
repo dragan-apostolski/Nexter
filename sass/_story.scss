@@ -4,11 +4,17 @@
         rgba($color-primary, .5),
         rgba($color-primary-dark, .5)
     ), url("../img/back.jpg");
+    background-size: cover;
     grid-column: full-start / col-end 4;
 
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr);
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      padding: 3rem;
+    }
   }
 
   &__img {
@@ -18,13 +24,24 @@
       grid-column: 2 / 6;
       grid-row: 2 / 6;
       box-shadow: 0 2rem 5rem rgba(black, .1);
+
+      @media only screen and (max-width: $bp-medium) {
+        grid-column: 1 / 5;
+        grid-row: 1 / -1;
+      }
     }
+
     &--2 {
       width: 115%;
       grid-column: 4 / 7;
       grid-row: 4 / 6;
       z-index: 10;
       box-shadow: 0 2rem 5rem rgba(black, .2);
+
+      @media only screen and (max-width: $bp-medium) {
+        grid-row: 1 / -1;
+        width: 100%;
+      }
     }
   }
 
@@ -37,6 +54,11 @@
     grid-column: col-start 5 / full-end;
 
     padding: 6rem 8vw;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 5 / 6;
+      grid-column: full-start / full-end;
+    }
   }
 
   &__text {
